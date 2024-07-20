@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Physician-Patient Appointment</title>
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Physician-Patient Appointment System</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+
+            <!-- Error message -->
+            <div class="message error" th:if="${param.error}">
+                Invalid Username or Password
+            </div>
+
+            <!-- Success message -->
+            <div class="message success" th:if="${param.logout}">
+                Logout Successful
+            </div>
+
+            <form action="/login" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="/register">Create an account</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Physician-Patient Appointment System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Physician-Patient Appointment</title>
+    <link rel="stylesheet" href="patientstyles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Physician-Patient Appointment System</h1>
+            <div class="user-info">
+                Logged in as: <span id="username" class="dropdown-toggle">PatientName</span>
+                <div class="dropdown-menu">
+                    <span sec:authorize="isAuthenticated()">
+                        <a th:href="@{/logout}" id="logout-link">Logout</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="button-container">
+            <button class="view-all-btn">View All Medications</button>
+        </div>
+        <div class="results-container">
+            <!-- This is where medication details will be displayed -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Physician-Patient Appointment System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
