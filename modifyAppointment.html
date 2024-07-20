@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Appointment - Physician-Patient Appointment</title>
+    <link rel="stylesheet" href="modifyAppointmentStyles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Physician Dashboard</h1>
+            <div class="user-info">
+                Logged in as: <span id="username" class="dropdown-toggle">PhysicianName</span>
+                <div class="dropdown-menu">
+                    <button id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="button-container">
+            <button class="action-btn" onclick="window.location.href='add_diagnosis.html'">Record Diagnosis</button>
+            <button class="action-btn" onclick="window.location.href='add_medication.html'">Propose Medication</button>
+        </div>
+        
+        <div class="form-container">
+            <h2>Modify Appointment</h2>
+            <form action="/modifyAppointment" method="post">
+                <label for="patientName">Patient Name</label>
+                <input type="text" id="patientName" name="patientName" required>
+
+                <label for="appointmentDate">Appointment Date</label>
+                <input type="datetime-local" id="appointmentDate" name="appointmentDate" required>
+
+                <label for="timeOfAppointment">Time of Appointment</label>
+                <input type="time" id="timeOfAppointment" name="timeOfAppointment" required>
+
+                <label for="attendingPhysician">Attending Physician</label>
+                <input type="text" id="attendingPhysician" name="attendingPhysician" required>
+
+                <label for="referringPhysician">Referring Physician</label>
+                <input type="text" id="referringPhysician" name="referringPhysician">
+
+                <button type="submit">Update Appointment</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Physician-Patient Appointment System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
